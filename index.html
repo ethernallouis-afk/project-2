@@ -123,4 +123,331 @@
 
         /* Modal Pop-up Common */
         .modal-overlay {
-            position: fixed; top: 0; left: 0;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none; justify-content: center; align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content { background: #111; border: 1px solid #333; padding: 30px; max-width: 450px; width: 90%; position: relative; }
+        .close-btn { position: absolute; top: 10px; right: 15px; color: #888; cursor: pointer; font-size: 22px; }
+        .size-selector { display: flex; gap: 10px; margin: 15px 0; }
+        .size-box { border: 1px solid #333; padding: 6px 14px; cursor: pointer; font-size: 11px; }
+        .size-box.selected, .size-box:hover { border-color: #fff; background: #222; }
+
+        /* Cart Modal List */
+        .cart-item-list { margin: 15px 0; max-height: 200px; overflow-y: auto; text-align: left; font-size: 12px; }
+        .cart-item { display: flex; justify-content: space-between; border-bottom: 1px solid #222; padding: 8px 0; }
+
+        footer { background-color: #000; border-top: 1px solid #222; text-align: center; padding: 30px; font-size: 10px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Cross & Crown</div>
+        <nav>
+            <a href="#">Collection</a>
+            <select class="currency-select" id="currency" onchange="changeCurrency()">
+                <option value="IDR">IDR (Rp)</option>
+                <option value="USD">USD ($)</option>
+            </select>
+            <a onclick="openCartModal()" id="cart-btn">Cart (0)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Y2K Gothic Vault</h1>
+        <p>Cyber-Gothic, Cyber-Y2K & Chrome Aesthetic Apparel</p>
+    </section>
+
+    <div class="container">
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterCategory('all', this)">All Vault</button>
+            <button class="filter-btn" onclick="filterCategory('outerwear', this)">Outerwear</button>
+            <button class="filter-btn" onclick="filterCategory('denim', this)">Denim</button>
+            <button class="filter-btn" onclick="filterCategory('silver', this)">Silver 925</button>
+            <button class="filter-btn" onclick="filterCategory('accessories', this)">Accessories</button>
+        </div>
+
+        <div class="product-grid" id="product-list">
+            <div class="product-card" data-category="outerwear">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Cross Patch Zip Hoodie', 899000, 'Heavyweight oversized zip hoodie dengan patch salib kulit.')">
+                <div class="product-title">Cross Patch Zip Hoodie</div>
+                <div class="product-price" data-idr="899000">Rp 899.000</div>
+                <button class="btn-buy" onclick="addToCart('Cross Patch Zip Hoodie', 899000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="denim">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Y2K Baggy Cross Denim', 1150000, 'Celana denim washed baggy fit ala era 2000-an.')">
+                <div class="product-title">Y2K Baggy Cross Denim</div>
+                <div class="product-price" data-idr="1150000">Rp 1.150.000</div>
+                <button class="btn-buy" onclick="addToCart('Y2K Baggy Cross Denim', 1150000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="silver">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('925 Dagger Silver Ring', 450000, 'Cincin perak murni bermotif dagger gothic.')">
+                <div class="product-title">925 Dagger Silver Ring</div>
+                <div class="product-price" data-idr="450000">Rp 450.000</div>
+                <button class="btn-buy" onclick="addToCart('925 Dagger Silver Ring', 450000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Gothic Graphic Longsleeve', 499000, 'Kaos lengan panjang motif gothic chrome.')">
+                <div class="product-title">Gothic Graphic Longsleeve</div>
+                <div class="product-price" data-idr="499000">Rp 499.000</div>
+                <button class="btn-buy" onclick="addToCart('Gothic Graphic Longsleeve', 499000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Y2K Metallic Cyber Tee', 379000, 'Kaos hitam bahan katun berat dengan sablon efek logam Y2K.')">
+                <div class="product-title">Y2K Metallic Cyber Tee</div>
+                <div class="product-price" data-idr="379000">Rp 379.000</div>
+                <button class="btn-buy" onclick="addToCart('Y2K Metallic Cyber Tee', 379000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Gothic Leather Biker Jacket', 1850000, 'Jaket kulit asli gaya vintage biker dengan zip perak.')">
+                <div class="product-title">Gothic Leather Jacket</div>
+                <div class="product-price" data-idr="1850000">Rp 1.850.000</div>
+                <button class="btn-buy" onclick="addToCart('Gothic Leather Jacket', 1850000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="denim">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Y2K Cargo Tactical Pants', 820000, 'Celana kargo banyak kantong bergaya street punk.')">
+                <div class="product-title">Y2K Cargo Tactical Pants</div>
+                <div class="product-price" data-idr="820000">Rp 820.000</div>
+                <button class="btn-buy" onclick="addToCart('Y2K Cargo Tactical Pants', 820000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="silver">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Heavy Cross Pendant Chain', 650000, 'Kalung rantai tebal dengan liontin salib gothic.')">
+                <div class="product-title">Heavy Cross Pendant Chain</div>
+                <div class="product-price" data-idr="650000">Rp 650.000</div>
+                <button class="btn-buy" onclick="addToCart('Heavy Cross Pendant Chain', 650000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories">
+                <img src="https://images.unsplash.com/photo-1588850561407-ed78c282e89b?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Embroidered Gothic Beanie', 280000, 'Kupluk rajut dengan bordir tulisan font Old English.')">
+                <div class="product-title">Embroidered Gothic Beanie</div>
+                <div class="product-price" data-idr="280000">Rp 280.000</div>
+                <button class="btn-buy" onclick="addToCart('Embroidered Gothic Beanie', 280000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories">
+                <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Cyberpunk Sunglasses', 350000, 'Kacamata hitam frameless bergaya futuristik Y2K.')">
+                <div class="product-title">Cyberpunk Sunglasses</div>
+                <div class="product-price" data-idr="350000">Rp 350.000</div>
+                <button class="btn-buy" onclick="addToCart('Cyberpunk Sunglasses', 350000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Dark Aesthetic Chunky Kicks', 1450000, 'Sepatu sol tebal bernuansa Y2K/Chunky.')">
+                <div class="product-title">Dark Chunky Kicks</div>
+                <div class="product-price" data-idr="1450000">Rp 1.450.000</div>
+                <button class="btn-buy" onclick="addToCart('Dark Chunky Kicks', 1450000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Leather Studded Belt', 390000, 'Ikat pinggang kulit dengan studded perak khas era Y2K rock.')">
+                <div class="product-title">Leather Studded Belt</div>
+                <div class="product-price" data-idr="390000">Rp 390.000</div>
+                <button class="btn-buy" onclick="addToCart('Leather Studded Belt', 390000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="outerwear">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Gothic Oversized Knit Sweater', 680000, 'Sweater rajut motif distressed toreh bergaya grunge Y2K.')">
+                <div class="product-title">Gothic Knit Sweater</div>
+                <div class="product-price" data-idr="680000">Rp 680.000</div>
+                <button class="btn-buy" onclick="addToCart('Gothic Knit Sweater', 680000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="denim">
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Black Flares Cross Jeans', 950000, 'Celana jeans model flare / bootcut warna hitam pekat.')">
+                <div class="product-title">Black Flares Cross Jeans</div>
+                <div class="product-price" data-idr="950000">Rp 950.000</div>
+                <button class="btn-buy" onclick="addToCart('Black Flares Cross Jeans', 950000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="silver">
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Cross Silver Earring Set', 320000, 'Anting perak motif salib gantung unisex.')">
+                <div class="product-title">Cross Silver Earring Set</div>
+                <div class="product-price" data-idr="320000">Rp 320.000</div>
+                <button class="btn-buy" onclick="addToCart('Cross Silver Earring Set', 320000)">Add to Cart</button>
+            </div>
+
+            <div class="product-card" data-category="accessories">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Cyber-Gothic Wallet Chain', 290000, 'Rantai dompet bahan perak krom bergaya Y2K metal.')">
+                <div class="product-title">Cyber-Gothic Wallet Chain</div>
+                <div class="product-price" data-idr="290000">Rp 290.000</div>
+                <button class="btn-buy" onclick="addToCart('Cyber-Gothic Wallet Chain', 290000)">Add to Cart</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title" style="font-family:'UnifrakturMaguntia'; font-size:28px;"></h3>
+            <p id="modal-price" style="color:#888; margin-top:5px; font-size:14px;"></p>
+            <hr style="border-color:#222; margin:15px 0;">
+            <p id="modal-desc" style="font-size:12px; color:#aaa; line-height:1.6;"></p>
+            
+            <p style="font-size:10px; color:#666; margin-top:15px; letter-spacing:1px;">SELECT SIZE:</p>
+            <div class="size-selector">
+                <div class="size-box" onclick="selectSize(this)">S</div>
+                <div class="size-box selected" onclick="selectSize(this)">M</div>
+                <div class="size-box" onclick="selectSize(this)">L</div>
+                <div class="size-box" onclick="selectSize(this)">XL</div>
+            </div>
+            <button class="btn-buy" style="margin-top:10px;" onclick="checkoutWA()">Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCartModal()">&times;</span>
+            <h3 style="font-family:'UnifrakturMaguntia'; font-size:28px;">Your Vault Cart</h3>
+            <div class="cart-item-list" id="cart-item-list">
+                <p style="color:#666;">Keranjang masih kosong.</p>
+            </div>
+            <hr style="border-color:#222; margin:15px 0;">
+            <p style="font-size:13px; font-weight:bold; margin-bottom:15px;">Total: <span id="cart-total-price">Rp 0</span></p>
+            <button class="btn-buy" onclick="checkoutAllWA()">Checkout All via WhatsApp</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Cross & Crown. Y2K Gothic Vault Collection.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let activeProduct = "";
+        let activeProductPrice = 0;
+
+        // 1. Fitur Filter Kategori
+        function filterCategory(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if(category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        // 2. Fitur Tambah ke Keranjang
+        function addToCart(title, price) {
+            cart.push({ title: title, price: price });
+            updateCartUI();
+            alert(`${title} berhasil dimasukkan ke keranjang.`);
+        }
+
+        function updateCartUI() {
+            document.getElementById('cart-btn').innerText = `Cart (${cart.length})`;
+            
+            const listContainer = document.getElementById('cart-item-list');
+            const totalContainer = document.getElementById('cart-total-price');
+            
+            if(cart.length === 0) {
+                listContainer.innerHTML = '<p style="color:#666;">Keranjang masih kosong.</p>';
+                totalContainer.innerText = 'Rp 0';
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <span>${item.title}</span>
+                        <span>Rp ${item.price.toLocaleString('id-ID')}</span>
+                    </div>
+                `;
+            });
+
+            listContainer.innerHTML = html;
+            totalContainer.innerText = `Rp ${total.toLocaleString('id-ID')}`;
+        }
+
+        // 3. Currency Converter
+        function changeCurrency() {
+            const curr = document.getElementById('currency').value;
+            const prices = document.querySelectorAll('.product-price');
+            
+            prices.forEach(price => {
+                const idr = parseInt(price.getAttribute('data-idr'));
+                if (curr === 'USD') {
+                    const usd = (idr / 15500).toFixed(2);
+                    price.innerText = `$ ${usd}`;
+                } else {
+                    price.innerText = `Rp ${idr.toLocaleString('id-ID')}`;
+                }
+            });
+        }
+
+        // 4. Modal Quick View Detail Produk
+        function openModal(title, price, desc) {
+            activeProduct = title;
+            activeProductPrice = price;
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-price').innerText = `Rp ${price.toLocaleString('id-ID')}`;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        // 5. Modal Cart Pop-Up
+        function openCartModal() {
+            document.getElementById('cart-modal').style.display = 'flex';
+        }
+
+        function closeCartModal() {
+            document.getElementById('cart-modal').style.display = 'none';
+        }
+
+        function selectSize(element) {
+            document.querySelectorAll('.size-box').forEach(box => box.classList.remove('selected'));
+            element.classList.add('selected');
+        }
+
+        // 6. Direct WhatsApp Checkout Single Item
+        function checkoutWA() {
+            const size = document.querySelector('.size-box.selected').innerText;
+            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp kamu
+            const text = `Halo, saya ingin memesan:\n- Nama: ${activeProduct}\n- Ukuran: ${size}`;
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // 7. WhatsApp Checkout All Cart Items
+        function checkoutAllWA() {
+            if(cart.length === 0) {
+                alert("Keranjang kamu masih kosong!");
+                return;
+            }
+            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp kamu
+            let text = "Halo, saya ingin memesan produk dari keranjang:\n";
+            let total = 0;
+            
+            cart.forEach((item, i) => {
+                text += `${i+1}. ${item.title} - Rp ${item.price.toLocaleString('id-ID')}\n`;
+                total += item.price;
+            });
+            text += `\nTotal Harga: Rp ${total.toLocaleString('id-ID')}`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
