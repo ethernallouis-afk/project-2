@@ -3,26 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CROSS & CROWN | Gothic Streetwear</title>
+    <title>CROSS & CROWN | Y2K Gothic Streetwear</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: #0d0d0d; color: #e5e5e5; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
 
-        body {
-            background-color: #0d0d0d;
-            color: #e5e5e5;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-
-        /* Header / Nav */
         header {
             background-color: #000;
             border-bottom: 1px solid #222;
@@ -35,105 +24,31 @@
             z-index: 100;
         }
 
-        .logo {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 32px;
-            color: #fff;
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        nav a {
-            color: #888;
-            text-decoration: none;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: color 0.3s;
-        }
-
+        .logo { font-family: 'UnifrakturMaguntia', cursive; font-size: 32px; color: #fff; letter-spacing: 2px; }
+        nav { display: flex; align-items: center; gap: 20px; }
+        nav a { color: #888; text-decoration: none; font-size: 12px; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
         nav a:hover { color: #fff; }
 
-        .currency-select {
-            background: #000;
-            color: #888;
-            border: 1px solid #333;
-            padding: 4px 8px;
-            font-size: 11px;
-            cursor: pointer;
-        }
+        .currency-select { background: #000; color: #888; border: 1px solid #333; padding: 4px 8px; font-size: 11px; cursor: pointer; }
 
-        /* Hero Banner */
         .hero {
-            height: 60vh;
+            height: 50vh;
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1200&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
             border-bottom: 1px solid #222;
         }
 
-        .hero h1 {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 55px;
-            margin-bottom: 10px;
-            color: #fff;
-        }
+        .hero h1 { font-family: 'UnifrakturMaguntia', cursive; font-size: 50px; color: #fff; }
+        .hero p { letter-spacing: 4px; font-size: 11px; text-transform: uppercase; color: #888; margin-top: 5px; }
 
-        .hero p {
-            letter-spacing: 4px;
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #888;
-        }
+        .container { padding: 50px 5%; max-width: 1300px; margin: 0 auto; }
 
-        /* Filter Section */
-        .container {
-            padding: 50px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .filter-bar {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: transparent;
-            border: 1px solid #222;
-            color: #666;
-            padding: 8px 16px;
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            border-color: #fff;
-            color: #fff;
-            background: #141414;
-        }
-
-        /* Product Grid */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
         }
 
         .product-card {
@@ -148,7 +63,7 @@
 
         .product-img {
             width: 100%;
-            height: 300px;
+            height: 280px;
             object-fit: cover;
             object-position: center;
             background-color: #1a1a1a;
@@ -158,24 +73,9 @@
             transition: transform 0.3s;
         }
 
-        .product-img:hover {
-            transform: scale(1.02);
-        }
-
-        .product-title {
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .product-price {
-            color: #888;
-            font-size: 12px;
-            margin-bottom: 15px;
-        }
+        .product-img:hover { transform: scale(1.02); }
+        .product-title { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #fff; }
+        .product-price { color: #888; font-size: 12px; margin-bottom: 15px; }
 
         .btn-buy {
             background-color: #fff;
@@ -191,84 +91,22 @@
             transition: all 0.3s;
         }
 
-        .btn-buy:hover {
-            background-color: #333;
-            color: #fff;
-        }
+        .btn-buy:hover { background-color: #333; color: #fff; }
 
-        /* Lookbook Section */
-        .lookbook-section {
-            margin-top: 80px;
-            text-align: center;
-            border-top: 1px solid #222;
-            padding-top: 50px;
-        }
-
-        .lookbook-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .lookbook-item {
-            height: 380px;
-            background-size: cover;
-            background-position: center;
-            border: 1px solid #222;
-            filter: grayscale(100%);
-            transition: filter 0.4s;
-        }
-
-        .lookbook-item:hover { filter: grayscale(0%); }
-
-        /* Modal Quick View */
         .modal-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
+            display: none; justify-content: center; align-items: center;
             z-index: 1000;
         }
 
-        .modal-content {
-            background: #111;
-            border: 1px solid #333;
-            padding: 30px;
-            max-width: 450px;
-            width: 90%;
-            position: relative;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px; right: 15px;
-            color: #888; cursor: pointer; font-size: 22px;
-        }
-
-        .size-selector {
-            display: flex; gap: 10px; margin: 15px 0;
-        }
-
-        .size-box {
-            border: 1px solid #333; padding: 6px 14px; cursor: pointer; font-size: 11px;
-        }
-
+        .modal-content { background: #111; border: 1px solid #333; padding: 30px; max-width: 450px; width: 90%; position: relative; }
+        .close-btn { position: absolute; top: 10px; right: 15px; color: #888; cursor: pointer; font-size: 22px; }
+        .size-selector { display: flex; gap: 10px; margin: 15px 0; }
+        .size-box { border: 1px solid #333; padding: 6px 14px; cursor: pointer; font-size: 11px; }
         .size-box.selected, .size-box:hover { border-color: #fff; background: #222; }
 
-        footer {
-            background-color: #000;
-            border-top: 1px solid #222;
-            text-align: center;
-            padding: 30px;
-            font-size: 10px;
-            color: #444;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 60px;
-        }
+        footer { background-color: #000; border-top: 1px solid #222; text-align: center; padding: 30px; font-size: 10px; color: #444; letter-spacing: 2px; text-transform: uppercase; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -277,7 +115,6 @@
         <div class="logo">Cross & Crown</div>
         <nav>
             <a href="#">Collection</a>
-            <a href="#lookbook">Lookbook</a>
             <select class="currency-select" id="currency" onchange="changeCurrency()">
                 <option value="IDR">IDR (Rp)</option>
                 <option value="USD">USD ($)</option>
@@ -287,134 +124,43 @@
     </header>
 
     <section class="hero">
-        <h1>Gothic Luxury Vault</h1>
-        <p>Heavy Sterling Silver & Handcrafted Apparel</p>
+        <h1>Y2K Gothic Vault</h1>
+        <p>Cyber-Gothic, Cyber-Y2K & Chrome Aesthetic Apparel</p>
     </section>
 
     <div class="container">
-        <div class="filter-bar">
-            <button class="filter-btn active">All Vault</button>
-            <button class="filter-btn">Outerwear</button>
-            <button class="filter-btn">Denim</button>
-            <button class="filter-btn">Silver 925</button>
-        </div>
-
         <div class="product-grid">
+            
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop" alt="Cross Patch Zip Hoodie" class="product-img" onclick="openModal('Cross Patch Zip Hoodie', 899000, '450 GSM Cotton Fleece dengan patch kulit salib buatan tangan dan sleting perak.')">
+                <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Cross Patch Zip Hoodie', 899000, 'Heavyweight oversized zip hoodie dengan patch salib kulit.')">
                 <div class="product-title">Cross Patch Zip Hoodie</div>
                 <div class="product-price" data-idr="899000">Rp 899.000</div>
                 <button class="btn-buy" onclick="addToCart('Cross Patch Zip Hoodie')">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop" alt="Vintage Cross Denim" class="product-img" onclick="openModal('Vintage Cross Denim', 1250000, 'Celana denim hitam washed dengan detail embroidery salib gothic.')">
-                <div class="product-title">Vintage Cross Denim</div>
-                <div class="product-price" data-idr="1250000">Rp 1.250.000</div>
-                <button class="btn-buy" onclick="addToCart('Vintage Cross Denim')">Add to Cart</button>
+                <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Y2K Baggy Cross Denim', 1150000, 'Celana denim washed baggy fit ala era 2000-an.')">
+                <div class="product-title">Y2K Baggy Cross Denim</div>
+                <div class="product-price" data-idr="1150000">Rp 1.150.000</div>
+                <button class="btn-buy" onclick="addToCart('Y2K Baggy Cross Denim')">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" alt="925 Dagger Ring" class="product-img" onclick="openModal('925 Dagger Ring', 450000, 'Cincin bahan 925 Sterling Silver murni bermotif pisau Dagger khas.')">
-                <div class="product-title">925 Dagger Ring</div>
+                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('925 Dagger Silver Ring', 450000, 'Cincin perak murni bermotif dagger gothic.')">
+                <div class="product-title">925 Dagger Silver Ring</div>
                 <div class="product-price" data-idr="450000">Rp 450.000</div>
-                <button class="btn-buy" onclick="addToCart('925 Dagger Ring')">Add to Cart</button>
+                <button class="btn-buy" onclick="addToCart('925 Dagger Silver Ring')">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=600&auto=format&fit=crop" alt="Gothic Print Longsleeve" class="product-img" onclick="openModal('Gothic Print Longsleeve', 499000, 'Kaos lengan panjang bahan heavy cotton dengan cetakan motif Horseshoe.')">
-                <div class="product-title">Gothic Print Longsleeve</div>
+                <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Gothic Graphic Longsleeve', 499000, 'Kaos lengan panjang motif gothic chrome.')">
+                <div class="product-title">Gothic Graphic Longsleeve</div>
                 <div class="product-price" data-idr="499000">Rp 499.000</div>
-                <button class="btn-buy" onclick="addToCart('Gothic Print Longsleeve')">Add to Cart</button>
+                <button class="btn-buy" onclick="addToCart('Gothic Graphic Longsleeve')">Add to Cart</button>
             </div>
-        </div>
 
-        <div class="lookbook-section" id="lookbook">
-            <h2 style="font-family:'UnifrakturMaguntia'; font-size:36px; margin-bottom:10px;">Visual Vault</h2>
-            <p style="font-size:11px; color:#666; letter-spacing: 2px;">FALL / WINTER COLLECTION</p>
-            <div class="lookbook-grid">
-                <div class="lookbook-item" style="background-image: url('https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="lookbook-item" style="background-image: url('https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="lookbook-item" style="background-image: url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=600&auto=format&fit=crop');"></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal-overlay" id="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3 id="modal-title" style="font-family:'UnifrakturMaguntia'; font-size:28px;"></h3>
-            <p id="modal-price" style="color:#888; margin-top:5px; font-size:14px;"></p>
-            <hr style="border-color:#222; margin:15px 0;">
-            <p id="modal-desc" style="font-size:12px; color:#aaa; line-height:1.6;"></p>
-            
-            <p style="font-size:10px; color:#666; margin-top:15px; letter-spacing:1px;">SELECT SIZE:</p>
-            <div class="size-selector">
-                <div class="size-box" onclick="selectSize(this)">S</div>
-                <div class="size-box selected" onclick="selectSize(this)">M</div>
-                <div class="size-box" onclick="selectSize(this)">L</div>
-                <div class="size-box" onclick="selectSize(this)">XL</div>
-            </div>
-            <button class="btn-buy" style="margin-top:10px;" onclick="checkoutWA()">Order via WhatsApp</button>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Cross & Crown. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        let cart = [];
-        let activeProduct = "";
-
-        // Cart Counter
-        function addToCart(item) {
-            cart.push(item);
-            document.getElementById('cart-btn').innerText = `Cart (${cart.length})`;
-            alert(`${item} berhasil ditambahkan ke keranjang.`);
-        }
-
-        // Currency Converter Switcher
-        function changeCurrency() {
-            const curr = document.getElementById('currency').value;
-            const prices = document.querySelectorAll('.product-price');
-            
-            prices.forEach(price => {
-                const idr = parseInt(price.getAttribute('data-idr'));
-                if (curr === 'USD') {
-                    const usd = (idr / 15500).toFixed(2);
-                    price.innerText = `$ ${usd}`;
-                } else {
-                    price.innerText = `Rp ${idr.toLocaleString('id-ID')}`;
-                }
-            });
-        }
-
-        // Quick View Modal
-        function openModal(title, price, desc) {
-            activeProduct = title;
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-price').innerText = `Rp ${price.toLocaleString('id-ID')}`;
-            document.getElementById('modal-desc').innerText = desc;
-            document.getElementById('modal').style.display = 'flex';
-        }
-
-        function closeModal() {
-            document.getElementById('modal').style.display = 'none';
-        }
-
-        function selectSize(element) {
-            document.querySelectorAll('.size-box').forEach(box => box.classList.remove('selected'));
-            element.classList.add('selected');
-        }
-
-        // Direct WhatsApp Checkout
-        function checkoutWA() {
-            const size = document.querySelector('.size-box.selected').innerText;
-            const phone = "6281234567890"; // Ganti dengan nomor WhatsApp Toko kamu
-            const text = `Halo, saya ingin memesan produk:\n- Nama: ${activeProduct}\n- Ukuran: ${size}`;
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, '_blank');
-        }
-    </script>
-</body>
-</html>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=600&auto=format&fit=crop" class="product-img" onclick="openModal('Y2K Metallic Cyber Tee', 379000, 'Kaos hitam bahan katun berat dengan sablon efek logam Y2K.')">
+                <div class="product-title">Y2K Metallic Cyber Tee</div>
+                <div class="product-price" data-idr="379000">Rp 379.000</div>
+                <button class="btn-buy" onclick="addToCart('Y2K Metallic
