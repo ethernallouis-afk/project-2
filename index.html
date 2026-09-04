@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOSHIFITS - SNSD Inspired Style</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fff0f5;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background-color: #ff69b4;
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255,105,180,0.3), rgba(255,182,193,0.5)), url('https://via.placeholder.com/1200x400?text=SNSD+Vibe+Collection');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        /* Product Section */
+        .container {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #d81b60;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 250px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .product-price {
+            color: #ff1493;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .btn-buy {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+
+        .btn-buy:hover {
+            background-color: #d81b60;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SOSHIFITS</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">New Arrivals</a>
+            <a href="#">Style Guide</a>
+            <a href="#">Cart (0)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>GET THE SOSHI LOOK</h1>
+        <p>Inspirasi Outfit Stage & Street Style ala Girls' Generation</p>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Trending Outfits</h2>
+        
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-img" style="background:#ffd1dc; display:flex; align-items:center; justify-content:center;">[Foto Jeans Warna]</div>
+                <div class="product-info">
+                    <div class="product-title">'Gee' Colorful Skinny Jeans</div>
+                    <div class="product-price">Rp 249.000</div>
+                    <button class="btn-buy">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background:#e0bbff; display:flex; align-items:center; justify-content:center;">[Foto Crop Top]</div>
+                <div class="product-info">
+                    <div class="product-title">'IGAB' Y2K Printed Crop Top</div>
+                    <div class="product-price">Rp 179.000</div>
+                    <button class="btn-buy">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background:#ffcbf2; display:flex; align-items:center; justify-content:center;">[Foto Blazer Set]</div>
+                <div class="product-info">
+                    <div class="product-title">'Mr.Mr.' Velvet Suit Set</div>
+                    <div class="product-price">Rp 450.000</div>
+                    <button class="btn-buy">Tambah ke Keranjang</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-img" style="background:#ecbcfd; display:flex; align-items:center; justify-content:center;">[Foto Retro Dress]</div>
+                <div class="product-info">
+                    <div class="product-title">'Lion Heart' Vintage Dress</div>
+                    <div class="product-price">Rp 320.000</div>
+                    <button class="btn-buy">Tambah ke Keranjang</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SOSHIFITS. Inspired by Girls' Generation Style.</p>
+    </footer>
+
+</body>
+</html>
