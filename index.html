@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CH-STYLE | Gothic Streetwear</title>
-    <!-- Font Gothic & Modern -->
+    <title>CROSS & CROWN | Gothic Streetwear</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -20,12 +19,45 @@
             background-color: #0d0d0d;
             color: #e5e5e5;
             font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* VIP Gate Overlay */
+        #vip-gate {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #vip-gate h2 {
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .pass-input {
+            background: transparent;
+            border: 1px solid #444;
+            padding: 10px 15px;
+            color: #fff;
+            text-align: center;
+            letter-spacing: 3px;
+            margin: 20px 0;
+            width: 250px;
         }
 
         /* Header / Nav */
         header {
             background-color: #000;
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             padding: 20px 5%;
             display: flex;
             justify-content: space-between;
@@ -42,201 +74,33 @@
             letter-spacing: 2px;
         }
 
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         nav a {
             color: #888;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
             letter-spacing: 2px;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: #fff;
+        nav a:hover { color: #fff; }
+
+        .currency-select {
+            background: #000;
+            color: #888;
+            border: 1px solid #333;
+            padding: 4px 8px;
+            font-size: 11px;
+            cursor: pointer;
         }
 
         /* Hero Banner */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1500x800?text=CHROME+VIBES');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 1px solid #222;
-        }
-
-        .hero h1 {
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 60px;
-            margin-bottom: 15px;
-            color: #fff;
-            text-shadow: 0 0 10px rgba(255,255,255,0.2);
-        }
-
-        .hero p {
-            letter-spacing: 4px;
-            font-size: 12px;
-            text-transform: uppercase;
-            color: #aaa;
-        }
-
-        /* Container & Grid */
-        .container {
-            padding: 60px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: 'UnifrakturMaguntia', cursive;
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #fff;
-            letter-spacing: 1px;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #141414;
-            border: 1px solid #222;
-            padding: 15px;
-            text-align: center;
-            transition: border-color 0.3s;
-        }
-
-        .product-card:hover {
-            border-color: #666;
-        }
-
-        .product-img {
-            width: 100%;
-            height: 280px;
-            background-color: #1f1f1f;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-            color: #555;
-            font-size: 14px;
-            border: 1px solid #111;
-        }
-
-        .product-title {
-            font-size: 14px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            color: #fff;
-        }
-
-        .product-price {
-            color: #888;
-            font-size: 13px;
-            margin-bottom: 15px;
-        }
-
-        .btn-buy {
-            background-color: #fff;
-            color: #000;
-            border: none;
-            padding: 10px 20px;
-            font-size: 11px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .btn-buy:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000;
-            border-top: 1px solid #222;
-            text-align: center;
-            padding: 30px;
-            font-size: 11px;
-            color: #555;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="logo">Cross & Crown</div>
-        <nav>
-            <a href="#">Collection</a>
-            <a href="#">Silver Jewelry</a>
-            <a href="#">Apparel</a>
-            <a href="#">Cart (0)</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Gothic Luxury</h1>
-        <p>Heavy Silver & Handcrafted Apparel</p>
-    </section>
-
-    <div class="container">
-        <h2 class="section-title">Latest Arrivals</h2>
-        
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="product-img">[ Gothic Cross Zip Hoodie ]</div>
-                <div class="product-title">Cross Patch Heavy Hoodie</div>
-                <div class="product-price">Rp 899.000</div>
-                <button class="btn-buy">Add to Cart</button>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="product-img">[ Leather Cross Denim ]</div>
-                <div class="product-title">Vintage Black Cross Denim</div>
-                <div class="product-price">Rp 1.250.000</div>
-                <button class="btn-buy">Add to Cart</button>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="product-img">[ Silver Dagger Ring ]</div>
-                <div class="product-title">925 Sterling Dagger Ring</div>
-                <div class="product-price">Rp 450.000</div>
-                <button class="btn-buy">Add to Cart</button>
-            </div>
-
-            <!-- Product 4 -->
-            <div class="product-card">
-                <div class="product-img">[ Horseshoe Longsleeve ]</div>
-                <div class="product-title">Gothic Print Longsleeve</div>
-                <div class="product-price">Rp 499.000</div>
-                <button class="btn-buy">Add to Cart</button>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 Cross & Crown. All Rights Reserved.</p>
-    </footer>
-
-</body>
-</html>
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0
