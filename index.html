@@ -3,25 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOSHIFITS - SNSD Inspired Style</title>
+    <title>CH-STYLE | Gothic Streetwear</title>
+    <!-- Font Gothic & Modern -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #fff0f5;
-            color: #333;
+            background-color: #0d0d0d;
+            color: #e5e5e5;
+            font-family: 'Montserrat', sans-serif;
         }
 
-        /* Header */
+        /* Header / Nav */
         header {
-            background-color: #ff69b4;
-            color: white;
-            padding: 15px 5%;
+            background-color: #000;
+            border-bottom: 1px solid #333;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -31,180 +36,206 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 32px;
+            color: #fff;
             letter-spacing: 2px;
         }
 
         nav a {
-            color: white;
+            color: #888;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
+            margin-left: 25px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
         }
 
-        /* Hero Section */
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Hero Banner */
         .hero {
-            background: linear-gradient(rgba(255,105,180,0.3), rgba(255,182,193,0.5)), url('https://via.placeholder.com/1200x400?text=SNSD+Vibe+Collection');
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('https://via.placeholder.com/1500x800?text=CHROME+VIBES');
             background-size: cover;
             background-position: center;
-            height: 300px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             text-align: center;
+            border-bottom: 1px solid #222;
         }
 
         .hero h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 60px;
+            margin-bottom: 15px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(255,255,255,0.2);
         }
 
-        /* Product Section */
+        .hero p {
+            letter-spacing: 4px;
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #aaa;
+        }
+
+        /* Container & Grid */
         .container {
-            padding: 40px 5%;
+            padding: 60px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 30px;
-            color: #d81b60;
+            font-family: 'UnifrakturMaguntia', cursive;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #fff;
+            letter-spacing: 1px;
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
         }
 
         .product-card {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.2s;
+            background: #141414;
+            border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+            transition: border-color 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            border-color: #666;
         }
 
         .product-img {
             width: 100%;
-            height: 250px;
-            background-color: #eee;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 15px;
-            text-align: center;
+            height: 280px;
+            background-color: #1f1f1f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 14px;
+            border: 1px solid #111;
         }
 
         .product-title {
-            font-size: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             margin-bottom: 8px;
-            font-weight: 600;
+            color: #fff;
         }
 
         .product-price {
-            color: #ff1493;
-            font-weight: bold;
-            margin-bottom: 12px;
+            color: #888;
+            font-size: 13px;
+            margin-bottom: 15px;
         }
 
         .btn-buy {
-            background-color: #ff69b4;
-            color: white;
+            background-color: #fff;
+            color: #000;
             border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
+            padding: 10px 20px;
+            font-size: 11px;
             font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
             width: 100%;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .btn-buy:hover {
-            background-color: #d81b60;
+            background-color: #333;
+            color: #fff;
         }
 
         /* Footer */
         footer {
-            background-color: #333;
-            color: white;
+            background-color: #000;
+            border-top: 1px solid #222;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 14px;
+            padding: 30px;
+            font-size: 11px;
+            color: #555;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">SOSHIFITS</div>
+        <div class="logo">Cross & Crown</div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">New Arrivals</a>
-            <a href="#">Style Guide</a>
+            <a href="#">Collection</a>
+            <a href="#">Silver Jewelry</a>
+            <a href="#">Apparel</a>
             <a href="#">Cart (0)</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1>GET THE SOSHI LOOK</h1>
-        <p>Inspirasi Outfit Stage & Street Style ala Girls' Generation</p>
+        <h1>Gothic Luxury</h1>
+        <p>Heavy Silver & Handcrafted Apparel</p>
     </section>
 
     <div class="container">
-        <h2 class="section-title">Trending Outfits</h2>
+        <h2 class="section-title">Latest Arrivals</h2>
         
         <div class="product-grid">
+            <!-- Product 1 -->
             <div class="product-card">
-                <div class="product-img" style="background:#ffd1dc; display:flex; align-items:center; justify-content:center;">[Foto Jeans Warna]</div>
-                <div class="product-info">
-                    <div class="product-title">'Gee' Colorful Skinny Jeans</div>
-                    <div class="product-price">Rp 249.000</div>
-                    <button class="btn-buy">Tambah ke Keranjang</button>
-                </div>
+                <div class="product-img">[ Gothic Cross Zip Hoodie ]</div>
+                <div class="product-title">Cross Patch Heavy Hoodie</div>
+                <div class="product-price">Rp 899.000</div>
+                <button class="btn-buy">Add to Cart</button>
             </div>
 
+            <!-- Product 2 -->
             <div class="product-card">
-                <div class="product-img" style="background:#e0bbff; display:flex; align-items:center; justify-content:center;">[Foto Crop Top]</div>
-                <div class="product-info">
-                    <div class="product-title">'IGAB' Y2K Printed Crop Top</div>
-                    <div class="product-price">Rp 179.000</div>
-                    <button class="btn-buy">Tambah ke Keranjang</button>
-                </div>
+                <div class="product-img">[ Leather Cross Denim ]</div>
+                <div class="product-title">Vintage Black Cross Denim</div>
+                <div class="product-price">Rp 1.250.000</div>
+                <button class="btn-buy">Add to Cart</button>
             </div>
 
+            <!-- Product 3 -->
             <div class="product-card">
-                <div class="product-img" style="background:#ffcbf2; display:flex; align-items:center; justify-content:center;">[Foto Blazer Set]</div>
-                <div class="product-info">
-                    <div class="product-title">'Mr.Mr.' Velvet Suit Set</div>
-                    <div class="product-price">Rp 450.000</div>
-                    <button class="btn-buy">Tambah ke Keranjang</button>
-                </div>
+                <div class="product-img">[ Silver Dagger Ring ]</div>
+                <div class="product-title">925 Sterling Dagger Ring</div>
+                <div class="product-price">Rp 450.000</div>
+                <button class="btn-buy">Add to Cart</button>
             </div>
 
+            <!-- Product 4 -->
             <div class="product-card">
-                <div class="product-img" style="background:#ecbcfd; display:flex; align-items:center; justify-content:center;">[Foto Retro Dress]</div>
-                <div class="product-info">
-                    <div class="product-title">'Lion Heart' Vintage Dress</div>
-                    <div class="product-price">Rp 320.000</div>
-                    <button class="btn-buy">Tambah ke Keranjang</button>
-                </div>
+                <div class="product-img">[ Horseshoe Longsleeve ]</div>
+                <div class="product-title">Gothic Print Longsleeve</div>
+                <div class="product-price">Rp 499.000</div>
+                <button class="btn-buy">Add to Cart</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 SOSHIFITS. Inspired by Girls' Generation Style.</p>
+        <p>&copy; 2026 Cross & Crown. All Rights Reserved.</p>
     </footer>
 
 </body>
